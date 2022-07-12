@@ -2,7 +2,7 @@
 
 Official PyTorch implementation of **ConvNeXt**, from the following paper:
 
-[A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545). arXiv 2022.\
+[A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545). CVPR 2022.\
 [Zhuang Liu](https://liuzhuang13.github.io), [Hanzi Mao](https://hanzimao.me/), [Chao-Yuan Wu](https://chaoyuan.org/), [Christoph Feichtenhofer](https://feichtenhofer.github.io/), [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/) and [Saining Xie](https://sainingxie.com)\
 Facebook AI Research, UC Berkeley
 
@@ -20,6 +20,11 @@ We propose **ConvNeXt**, a pure ConvNet model constructed entirely from standard
 - [x] ImageNet-22K Pre-training Code  
 - [x] ImageNet-1K Fine-tuning Code  
 - [x] Downstream Transfer (Detection, Segmentation) Code
+- [x] Image Classification \[[Colab\]](https://colab.research.google.com/drive/1CBYTIZ4tBMsVL5cqu9N_-Q3TBprqsfEO?usp=sharing) and Web Demo [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/convnext)
+- [x] Fine-tune on CIFAR with Weights & Biases logging \[[Colab\]](https://colab.research.google.com/drive/1ijAxGthE9RENJJQRO17v9A7PTd1Tei9F?usp=sharing)
+
+
+
 <!-- ✅ ⬜️  -->
 
 ## Results and Pre-trained Models
@@ -38,6 +43,10 @@ We propose **ConvNeXt**, a pure ConvNet model constructed entirely from standard
 
 | name | resolution |acc@1 | #params | FLOPs | 22k model | 1k model |
 |:---:|:---:|:---:|:---:| :---:| :---:|:---:|
+| ConvNeXt-T | 224x224 | 82.9 | 29M | 4.5G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_224.pth)   | [model](https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_1k_224.pth)
+| ConvNeXt-T | 384x384 | 84.1 | 29M | 13.1G |     -          | [model](https://dl.fbaipublicfiles.com/convnext/convnext_tiny_22k_1k_384.pth)
+| ConvNeXt-S | 224x224 | 84.6 | 50M | 8.7G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_224.pth)   | [model](https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_1k_224.pth)
+| ConvNeXt-S | 384x384 | 85.8 | 50M | 25.5G |     -          | [model](https://dl.fbaipublicfiles.com/convnext/convnext_small_22k_1k_384.pth)
 | ConvNeXt-B | 224x224 | 85.8 | 89M | 15.4G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_224.pth)   | [model](https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_224.pth)
 | ConvNeXt-B | 384x384 | 86.8 | 89M | 47.0G |     -          | [model](https://dl.fbaipublicfiles.com/convnext/convnext_base_22k_1k_384.pth)
 | ConvNeXt-L | 224x224 | 86.6 | 198M | 34.4G | [model](https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_224.pth)  | [model](https://dl.fbaipublicfiles.com/convnext/convnext_large_22k_1k_224.pth)
@@ -96,10 +105,10 @@ This project is released under the MIT license. Please see the [LICENSE](LICENSE
 ## Citation
 If you find this repository helpful, please consider citing:
 ```
-@Article{liu2021convnet,
+@Article{liu2022convnet,
   author  = {Zhuang Liu and Hanzi Mao and Chao-Yuan Wu and Christoph Feichtenhofer and Trevor Darrell and Saining Xie},
   title   = {A ConvNet for the 2020s},
-  journal = {arXiv preprint arXiv:2201.03545},
+  journal = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year    = {2022},
 }
 ```
